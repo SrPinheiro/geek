@@ -1,11 +1,16 @@
-import React from 'react';
 import './App.css';
-import SideBar from './components/SideBar/SideBar';
+import { BrowserRouter} from 'react-router-dom';
+import Router from './Routes/Router';
+import { UserProvider } from './Context/UserContext';
 
 function App() {
   return (
     <div className="App">
-      <SideBar />
+      <UserProvider>
+        <BrowserRouter>
+          <Router />
+        </BrowserRouter>
+      </UserProvider>
     </div>
   );
 }
