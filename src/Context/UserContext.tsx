@@ -12,7 +12,7 @@ export type userType = {
 
 export type userContextType = [
   user: userType | null,
-  setUser: Dispatch<React.SetStateAction<userType>> | null
+  setUser: Dispatch<React.SetStateAction<userType | null>> | null
 ];
 
 export const UserContext = createContext<userContextType>([{} as userType, () => {}] );
@@ -22,7 +22,7 @@ type Props = {
 }
 
 export const UserProvider = ({children }: Props) => {
-  const [user, setUser] = useState<userType>({} as userType);
+  const [user, setUser] = useState<userType | null>(null);
   return (
     <UserContext.Provider value={[user, setUser]}>
       {children}

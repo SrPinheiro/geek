@@ -18,10 +18,10 @@ const SideBar = () => {
   const [user] = GetUser();
 
   const options: optionType[] = [
-    { icon: FaHome, text: "Home", to: "/" },
+    { icon: FaHome, text: "Home", to: "/home" },
     { icon: AiOutlineHeart, text: "Favoritos", to: "/favorites" },
     { icon: GoChecklist, text: "Para-Assistir", to: "/to-watch" },
-    { icon: IoDiamondOutline, text: "Recomendados", to: "/recomended" },
+    { icon: IoDiamondOutline, text: "Recomendados", to: "/recommended" },
     { icon: FiUser, text: user ? "Conta" : "SingIn", to:user ? "/user/profile" : "/user/singin" },
   ];
 
