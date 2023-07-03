@@ -1,0 +1,78 @@
+.container{
+  height: 100vh;
+  width: 20em;
+  background-color: rgba(0, 0, 0, 0.9);
+  display: flex;
+  flex-direction: column;
+}
+
+.profileImage{
+  height: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.profileImage > img{
+  background-color: transparent ;
+  background-color: white;
+  border-radius: 50%;
+  height: 5em;
+  width: auto;
+}
+
+.content{
+  /* background-color: green; */
+  height: 60%;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+
+}
+
+.optionContainer{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 3em;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.optionContainer > svg {
+  margin-left: 2.4em;
+  height: 1.5em;
+  width: auto;
+  color: #49cb8c;
+}
+.optionContainer > p {
+  margin-left: 1em;
+  color: white;
+  font-size: 1.2em;
+}
+
+.footer{
+  /* background-color: blue; */
+  text-align: center;
+  color: #27a29c;
+  height: 10%;
+}
+
+.footer > .title{
+  animation: scaleAnimation 2s linear infinite;
+}
+@keyframes scaleAnimation {
+  0%{
+    transform: scale(100%);
+    color: #27a29c;
+  }
+
+  50%{
+    transform: scale(102%);
+    color: #27b0a9;
+  }
+
+  100%{
+    transform: scale(100%);
+    color: #27a29c;
+  }
+}
