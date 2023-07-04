@@ -47,7 +47,7 @@ const SideBar = () => {
           ))}
       </div>
       <div className={styles.footer}>
-        <h1 className={styles.title}>Geek Movies</h1>
+        <h1 className={styles.title} title="Desenvolvido por Leonardo Pinhero">Geek</h1>
       </div>
     </div>
   );

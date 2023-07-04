@@ -1,9 +1,12 @@
 .container{
   height: 100vh;
-  width: 20em;
+  width: 15em;
   background-color: rgba(0, 0, 0, 0.9);
   display: flex;
   flex-direction: column;
+  position: fixed;
+  top: 0;
+  left: 0;
 }
 
 .profileImage{
@@ -38,6 +41,16 @@
   text-decoration: none;
 }
 
+.optionContainer:hover{
+  background-color: #27a29c;
+  border-radius: 0.5em;
+  transition: 0.5s;
+}
+
+.optionContainer:hover > * {
+  color: black;
+}
+
 .optionContainer > svg {
   margin-left: 2.4em;
   height: 1.5em;
@@ -47,13 +60,13 @@
 .optionContainer > p {
   margin-left: 1em;
   color: white;
-  font-size: 1.2em;
+  font-size: 1em;
 }
 
 .footer{
   /* background-color: blue; */
   text-align: center;
-  color: #27a29c;
+  color: #ffffff;
   height: 10%;
 }
 
@@ -63,16 +76,13 @@
 @keyframes scaleAnimation {
   0%{
     transform: scale(100%);
-    color: #27a29c;
   }
 
   50%{
     transform: scale(102%);
-    color: #27b0a9;
   }
 
   100%{
     transform: scale(100%);
-    color: #27a29c;
   }
 }
