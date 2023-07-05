@@ -2,6 +2,9 @@
 
 Bem-vindo ao projeto Geek! Este é um projeto em React-TS criado por Leonardo Pinheiro, estudante de programação com o objetivo de aprimorar suas habilidades no desenvolvimento web. O projeto consiste em uma página de filmes, onde os usuários podem explorar e descobrir novos filmes interessantes.
 
+## Visite
+  https://srpinheiro.github.io/geek
+
 ## Funcionalidades
 
 - Pesquisar filmes por título.
