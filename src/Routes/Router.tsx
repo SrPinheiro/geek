@@ -18,7 +18,6 @@ import Recommended from "../Pages/recommended/Recommended";
 
 const Router = () => {
   const [user] = GetUser();
-  console.log(user)
   return (
     <Routes>
       <Route path="/user/*" element={<UserRoutes />} />

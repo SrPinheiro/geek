@@ -88,7 +88,7 @@ export const MovieData = styled.div`
   }
 
   button:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
     transition: 0.5s linear;
   }
 
@@ -100,7 +100,9 @@ export const MovieData = styled.div`
 `;
 
 export const MoviesContainer = styled.div`
-  // background-color: blue;
   flex-grow: 1;
+  display: flex;
+  overflow-x: overlay;
+  flex-direction: column;
   background-color: rgba(0, 0, 0, 0.5);
 `;

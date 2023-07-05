@@ -1,47 +1,65 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 // Hooks
-import {useState} from 'react'
-// styles
-import styles from "./Home.module.css";
+import {useState, useRef, useEffect} from 'react'
 
 // Styled Components
 import { Container } from '../../Components/GlobalComponents/Container'
-import { MainContent, MovieData, MovieDataContainer, MoviesContainer, NavBar } from './Styles'
+import { MainContent, MovieDataContainer, MoviesContainer, NavBar } from './Styles'
 
 // Icons
 import { BiSearchAlt } from 'react-icons/bi'
-import {BiPlay} from 'react-icons/bi'
-import {AiFillStar} from 'react-icons/ai'
+import ShowMovieData from '../../Components/Home/ShowMovieData/ShowMovieData';
+import { MakeRequest } from '../../Hooks/Requests/MakeRequest';
+import MovieList from '../../Components/MovieListComponent.tsx/MovieList';
+import { Movie } from '../../Hooks/Requests/MakeRequest';
+import MovieScroller from '../../Components/Home/MovieScroller/MovieScroller';
 
-type Props = {}
+const Home = () => {
 
-const Home = (props: Props) => {
+  // const [background] = useState<string>(`url(${process.env.PUBLIC_URL}/images/background.jpeg)`)
+  const globalContainer = useRef<HTMLDivElement>(null)
+  const [popularMovies, setPopularMovies] = useState<Movie[]>()
 
-  const [background, setBackground] = useState<string>(`url(${process.env.PUBLIC_URL}/images/background.jpeg)`)
+  const {response, setURL} = MakeRequest()
+
+  useEffect(() => {
+    if(response.category === "POPULAR" && response.data){
+      setPopularMovies(response.data)
+    }
+  },[response])
+
+  useEffect(() => {
+    setURL({type: "POPULAR"})
+  }, [setURL])
+
 
   return (
-    <Container backgroundImage={background}>
+    <Container ref={globalContainer}>
       <NavBar>
         <BiSearchAlt />
       </NavBar>
 
       <MainContent>
         <MovieDataContainer>
-          <MovieData>
-            <div>
-              <h1>Title</h1>
-              <div>
-                {Array(5).fill(0).map((_, index) => (
-                  <AiFillStar key={index}/>
-                ))}
-              </div>
-            </div>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sunt a rerum maxime similique sit laudantium? Nihil animi, aliquam adipisci nesciunt quidem eligendi blanditiis quia quas fuga cupiditate reprehenderit quaerat ipsum!</p>
-            <button title='Assistir trailer'><BiPlay/></button>
-          </MovieData>
-
+          <ShowMovieData />
         </MovieDataContainer>
-        <MoviesContainer>
 
+        <MoviesContainer>
+          <MovieScroller title='Filmes Populares'>
+          {popularMovies && <MovieList movies={popularMovies}/>}
+          </MovieScroller>
+
+          <MovieScroller title='Filmes Populares'>
+          {popularMovies && <MovieList movies={popularMovies}/>}
+          </MovieScroller>
+
+          <MovieScroller title='Filmes Populares'>
+          {popularMovies && <MovieList movies={popularMovies}/>}
+          </MovieScroller>
+
+          <MovieScroller title='Filmes Populares'>
+          {popularMovies && <MovieList movies={popularMovies}/>}
+          </MovieScroller>
         </MoviesContainer>
 
       </MainContent>
