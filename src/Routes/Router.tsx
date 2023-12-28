@@ -37,6 +37,7 @@ function DefaultRoutes() {
         <Route  path="/favorites" element={<Favorites />}/>
         <Route  path="/to-watch" element={<ToWatch />}/>
         <Route  path="/recommended" element={<Recommended />}/>
+        <Route path="*" element={<Home />} />
       </Routes>
     </>
   );

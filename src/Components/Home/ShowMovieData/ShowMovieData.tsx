@@ -10,7 +10,7 @@ const ShowMovieData = () => {
   return (
     <Container>
       <Header>
-        <Title>Title</Title>
+        <Title>Oi Joana</Title>
         <Rating>
           {Array(5).fill(0).map((_, index) => (
             <AiFillStar key={index}/>
